@@ -8,4 +8,4 @@ grayscale_openMP: grayscale_openMP.cpp
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
 clean:
-	rm -f grayscale_openMP gris.jpg imagen_escala_grises.jpg imagen_gris.jpg imagen_gises.png imagen_gises.jpg
+	rm -f grayscale_openMP imagen_gris.png imagen_escala_grises.jpg imagen_gris.jpg imagen_gises.png imagen_gises.jpg
