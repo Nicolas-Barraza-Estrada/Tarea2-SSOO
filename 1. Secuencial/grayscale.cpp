@@ -6,12 +6,17 @@ using namespace cv;
 using namespace std;
 using namespace chrono;
 
-int main() {
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        cerr << "Uso: " << argv[0] << " <imagen_a_color> <imagen_escala_de_grises>" << endl;
+        return -1;
+    }
+
     // Lee el archivo de imagen a color.
-    Mat image = imread("earth.jpg", IMREAD_COLOR);
+    Mat image = imread(argv[1], IMREAD_COLOR);
 
     if (image.empty()) {
-        cerr << "Error al cargar la imagen." << endl;
+        cerr << "Error al cargar la imagen a color." << endl;
         return -1;
     }
 
@@ -24,9 +29,8 @@ int main() {
             // Obtiene un puntero al píxel en la posición (r, c).
             Vec3b& pixel = image.at<Vec3b>(r, c);
 
-            // Calcula la escala de grises utilizando el método mencionado.
-            uchar grayscale = static_cast<uchar>((min({pixel[0], pixel[1], pixel[2]}) + max({pixel[0], pixel[1], pixel[2]})) / 2);
-
+            // Calcula la escala de grises utilizando Luminosity Method.
+            uchar grayscale = static_cast<uchar>((pixel[0] * 0.3) + (pixel[1] * 0.59) + (pixel[2] * 0.11));
             // Establece el mismo valor para cada canal (escala de grises).
             pixel[0] = pixel[1] = pixel[2] = grayscale;
         }
@@ -40,7 +44,7 @@ int main() {
     cout << "Tiempo de ejecucion: " << duration.count() << " microsegundos" << endl;
 
     // Guarda la imagen en escala de grises.
-    imwrite("imagen_gris.jpg", image);
+    imwrite(argv[2], image);
 
     return 0;
 }
