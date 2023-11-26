@@ -1,7 +1,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <chrono>
-//  ./grayscale nasa.webp imagen_mod.jpg
+
 using namespace cv;
 using namespace std;
 using namespace chrono;
