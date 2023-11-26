@@ -8,4 +8,4 @@ grayscale_thread: grayscale_thread.cpp
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
 clean:
-	rm -f grayscale_thread imagen_gris.jpg
+	rm -f grayscale_thread gris.jpg

@@ -8,4 +8,4 @@ grayscale: grayscale.cpp
 	$(CC) $(CFLAGS) -o $@ $< $(LIBS)
 
 clean:
-	rm -f grayscale imagen_gris.jpg
+	rm -f grayscale gris.jpg
