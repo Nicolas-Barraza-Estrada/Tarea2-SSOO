@@ -9,7 +9,7 @@ Para compilar y ejecutar la versión secuencial, siga los siguientes pasos:
 cd 1.Secuencial/
 make
 ./grayscale imagen_a_color.jpg imagen_escala_de_grises.jpg
-# ./grayscale nasa.webp imagen_gris.jpg
+# ./grayscale nasa.jpg imagen_gris.jpg
 make clean
 ```
 ## 2. Parelo (Thread)
@@ -19,7 +19,7 @@ Para compilar y ejecutar la versión parela utilizando la clase Thread, siga los
 cd 2.Thread/
 make
 ./grayscale_thread imagen_a_color.jpg imagen_escala_de_grises.jpg 4
-# ./grayscale_thread  nasa.webp imagen_gris.jpg 4
+# ./grayscale_thread  nasa.jpg imagen_gris.jpg 4
 make clean
 ```
 
@@ -29,5 +29,5 @@ Para compilar y ejecutar la versión parela utilizando la API OpenMP, siga los s
 cd 3.OpenMP/
 make
 ./grayscale_openMP imagen_a_color.jpg imagen_escala_de_grises.jpg 4
-# ./grayscale_openMP nasa.webp imagen_gris.jpg 4
+# ./grayscale_openMP nasa.jpg imagen_gris.jpg 4
 make clean

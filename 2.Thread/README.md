@@ -4,6 +4,6 @@ Para compilar y ejecutar la versión parela utilizando la clase Thread, siga los
 ```bash
 make
 ./grayscale_thread imagen_a_color.jpg imagen_escala_de_grises.jpg 4
-# ./grayscale_thread  nasa.webp imagen_gris.jpg 4
+# ./grayscale_thread  nasa.jpg imagen_gris.jpg 4
 make clean
 ```
