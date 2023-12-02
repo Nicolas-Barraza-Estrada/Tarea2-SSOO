@@ -1,6 +1,6 @@
 CC = g++
-CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4)
-LIBS = $(shell pkg-config --libs opencv4)
+CFLAGS = -std=c++11 -fopenmp $(shell pkg-config --cflags opencv4)
+LIBS = -fopenmp $(shell pkg-config --libs opencv4)
 
 all: grayscale_openMP
 
