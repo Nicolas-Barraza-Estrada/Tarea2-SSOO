@@ -16,8 +16,17 @@ int main(int argc, char* argv[]) {
     // Lee el archivo de imagen a color.
     Mat image = imread(argv[1], IMREAD_COLOR);
 
+    // Validar que el primer y segundo argumentos son archivos de imagen.
     if (image.empty()) {
         cerr << "Error al cargar la imagen a color." << endl;
+        return -1;
+    }
+    
+    // Validar que el tercer argumento sea un número entero.
+    try {
+        int num_threads = stoi(argv[3]);
+    } catch (const invalid_argument& e) {
+        cerr << "El tercer argumento debe ser un número entero." << endl;
         return -1;
     }
 
